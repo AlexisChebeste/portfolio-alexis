@@ -1,0 +1,7 @@
+---
+const {class:className} = Astro.props;
+---
+
+<a class={`flex gap-2 items-center ${className}`} {...Astro.props} target="_blank" rel="noopener noreferrer" role="link">
+    <slot />
+</a>

@@ -1,0 +1,18 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+import Subtitle from "./Subtitle.astro";
+import { skillsData } from "../data/skillsData";
+import SkillsCategory from "./SkillsCategory.astro";
+
+---
+
+<SectionContainer id="skills">
+    <Subtitle class="text-center">Habilidades técnicas</Subtitle>
+    <div class="flex flex-col gap-4">
+        
+        {skillsData.map(({category, items})  => (
+            <SkillsCategory category={category} items={items} />
+        ))}
+        
+    </div>
+</SectionContainer>

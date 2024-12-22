@@ -1,0 +1,20 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Porfolio de Alexis Chebeste, desarrollador Front-End" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portfolio Alexis</title>
+	</head>
+	<body class="bg-gradient-to-b from-zinc-900 to-neutral-800 text-white flex flex-col gap-8 items-center min-h-screen font-sans antialiased ">
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>

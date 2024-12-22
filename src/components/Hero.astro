@@ -1,0 +1,33 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+import Button from "./Button.astro";
+import Link from "./Link.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import LinkedInIcon from "./icons/LinkedInIcon.astro";
+import Download from "./icons/Download.astro";
+---
+
+<SectionContainer class="items-center justify-center text-center py-32 " id="hero">
+    <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-6xl md:leading-[1.1] mt-20 md:mt-36">Hey, soy Alexis</h1>
+    <p class="text-lg text-gray-400 max-w-2xl md:text-xl ">
+        <span class="text-blue-500">Desarrollador Front-End</span> de Buenos Aires, Argentina. Especializado en aplicaciones web responsivas que brindan experiencias de usuario significativas.
+    </p>
+    <div class="flex flex-wrap justify-around gap-4 mx-auto">
+        <Button >
+            <Link href="https://github.com/AlexisChebeste" aria-label="Link a perfil de GitHub">
+                <GitHubIcon class="size-4" />
+                GitHub
+            </Link>
+        </Button>
+        <Button>
+            <Link href="https://www.linkedin.com/in/alexis-chebeste/" aria-label="Link a perfil de LinkedIn"> 
+                <LinkedInIcon class="size-4" />
+                LinkedIn
+            </Link>
+        </Button>
+        <Button class="bg-slate-50 text-zinc-900 hover:bg-slate-200">
+            <Download class="size-4" />
+            Descargar CV
+        </Button>
+    </div>
+</SectionContainer>

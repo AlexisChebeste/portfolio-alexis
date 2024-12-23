@@ -5,26 +5,45 @@ import Comment from "./icons/Comment.astro";
 import User from "./icons/User.astro";
 import SectionContainer from "./SectionContainer.astro";
 import Subtitle from "./Subtitle.astro";
+
+
 ---
 
 <SectionContainer class="items-center" id="contact">
     <Subtitle>Contáctame</Subtitle>
-    <form class="flex flex-col gap-6 max-w-3xl mx-auto w-full">
+    <form class="flex flex-col gap-6 max-w-3xl mx-auto w-full" >
         <label  for="name" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Nombre</label>
-        <div class="relative peer bg-neutral-950 border border-stone-600 rounded-lg  text-sm">
+        <div class="relative ">
             <User class="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground " />
-            <input type="text" id="name" name="name" placeholder="Tu nombre" class="pl-10 bg-transparent w-full py-3" required/>
+            <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Tu nombre" 
+                class="bg-neutral-950 w-full px-10 py-2 text-sm text-gray-900 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-transparent" 
+                required/>
         </div>
         <label  for="email" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label>
-        <div class="relative peer bg-neutral-950 border border-stone-600 rounded-lg  text-sm">
+        <div class="relative p">
             <Email class="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground " />
-            <input type="email" id="email" name="email" placeholder="tu@email.com" class="pl-10 bg-transparent w-full py-3" required/>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="tu@email.com" class="bg-neutral-950 w-full px-10 py-2 text-sm text-gray-900 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-transparent" 
+                required/>
         </div>
-        <label  for="text" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Mensaje</label>
-        <div class="relative peer bg-neutral-950 border border-stone-600 rounded-lg  text-sm">
-            <Comment class="absolute left-4 top-6 transform -translate-y-1/2 text-muted-foreground " />
-            <textarea id="text" name="text" placeholder="Tu mensaje" class="pl-10 bg-transparent w-full py-3 min-h-24" required/>
-        </div>
-        <Button type="submit" class="mx-auto justify-center w-full hover:scale-105 bg-slate-50 text-zinc-900 hover:bg-slate-200 ">Enviar Mensaje</Button>
+        <label  for="message" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Mensaje</label>
+        <div class="relative ">
+            <Comment class="absolute left-3 top-4 text-muted-foreground" />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tu mensaje"
+              class="bg-neutral-950 w-full px-10 py-3 text-sm text-gray-900 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200  focus:border-transparent min-h-[100px]"
+              required
+            ></textarea>
+          </div>
+        <Button type="submit" class="mx-auto justify-center w-full bg-slate-50 text-zinc-900 hover:bg-slate-200 hover:scale-105 ">Enviar Mensaje</Button>
     </form>
 </SectionContainer>

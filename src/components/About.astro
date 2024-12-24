@@ -7,19 +7,26 @@ import Subtitle from "./Subtitle.astro";
 <SectionContainer id="about" >
     <Subtitle >Sobre mí</Subtitle>
     <div class="grid gap-8 lg:grid-cols-2 items-center justify-center">
-        <div class="flex flex-col justify-center gap-4 mx-auto">
-            <p class="text-lg text-gray-400  ">
+        <div class="flex flex-col justify-center gap-4 mx-auto text-gray-700 text-lg  dark:text-gray-400">
+            <p >
                 Soy un desarrollador Front-End de Buenos Aires, Argentina. Me especializo en aplicaciones web responsivas que brindan experiencias de usuario significativas. Mi objetivo es crear productos digitales que sean accesibles, intuitivos y atractivos.
             </p>
-            <p class="text-lg text-gray-400 ">
+            <p >
                 Me apasiona aprender nuevas tecnologías y mejorar mis habilidades. Siempre estoy buscando nuevos desafíos y oportunidades para crecer profesionalmente.
             </p>
-            <p class="text-lg text-gray-400  ">
+            <p >
                 Disfruto trabajar con otros desarrolladores y diseñadores talentosos para crear experiencias digitales increíbles.    
             </p>
         </div>
         <div class="flex justify-center items-center">
-            <Image src="/images/profile.svg" alt="Foto de Alexis Chebeste" class="rounded-full " height={400} width={400} inferSize={true}/>
+            <Image 
+                src="/images/profile.svg" 
+                alt="Foto de Alexis Chebeste" 
+                class="rounded-full " 
+                height={400} width={400} 
+                inferSize={true}
+                loading={"lazy"}
+            />
         </div>
     </div>
 </SectionContainer>

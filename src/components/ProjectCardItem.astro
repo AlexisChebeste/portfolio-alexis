@@ -1,22 +1,21 @@
 ---
 import { Image } from "astro:assets";
 import Capsule from "./Capsule.astro";
-import Button from "./Button.astro";
 import Link from "./Link.astro";
 
 const {title, image, description, tags, linkCode, linkWeb} = Astro.props;
 
 ---
 
-<div class="bg-neutral-950 border border-spacing-2 border-stone-600 shadow-md  rounded-lg flex flex-col  ">
-    <Link href={linkWeb} >
+<div class="bg-white dark:bg-neutral-950 border border-spacing-2  border-stone-400 dark:border-stone-600 shadow-md  rounded-lg flex flex-col  ">
+    <a href={linkWeb} target="_blank" rel="noopener noreferrer" role="link">
         <Image class="object-contain rounded-t-lg w-full" src={image} alt={title} />
-    </Link>
+    </a>
     
     <div  class="flex flex-col p-4 justify-between h-full">
         <div class="flex flex-col gap-2">
-            <h3 class="text-xl font-semibold">{title}</h3>
-            <p class="text-gray-400">{description}</p>
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white ">{title}</h3>
+            <p class="text-gray-700 dark:text-gray-400 ">{description}</p>
         </div>
         <div class="flex flex-wrap gap-2 mt-7">
             {tags.map((tag: unknown) => (
@@ -25,16 +24,13 @@ const {title, image, description, tags, linkCode, linkWeb} = Astro.props;
         </div>
     </div>
     <div class="flex justify-between p-4">
-        <Button >
-            <Link href={linkWeb} >
-                Ver proyecto
-            </Link>
-        </Button>
-        <Button>
-            <Link href={linkCode}>
-                Ver código
-            </Link>
-        </Button>
+        <Link href={linkWeb} >
+            Ver proyecto
+        </Link>
+        <Link href={linkCode}>
+            Ver código
+        </Link>
+        
     </div>
     
 </div>

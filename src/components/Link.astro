@@ -2,6 +2,6 @@
 const {class:className} = Astro.props;
 ---
 
-<a class={`flex gap-2 items-center ${className}`} {...Astro.props} target="_blank" rel="noopener noreferrer" role="link">
+<a class={` bg-white hover:bg-slate-200 dark:bg-neutral-950 border border-stone-300 dark:border-stone-600 dark:hover:bg-neutral-700 hover:scale-105 px-6 py-3 flex gap-2 items-center rounded-lg text-sm font-medium transition ${className}` } {...Astro.props} target="_blank" rel="noopener noreferrer" role="link">
     <slot />
 </a>

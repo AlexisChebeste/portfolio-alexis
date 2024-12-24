@@ -11,10 +11,18 @@ import Header from "../components/Header.astro";
 		<meta name="description" content="Porfolio de Alexis Chebeste, desarrollador Front-End" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Portfolio Alexis</title>
+		<script type="text/javascript"
+		  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		
+		<script type="text/javascript">
+		  emailjs.init('nfqL-KKpKIqxIVPe7')
+		</script>
 	</head>
 	<body class="bg-gradient-to-b from-zinc-900 to-neutral-800 text-white flex flex-col gap-8 items-center min-h-screen font-sans antialiased ">
 		<Header />
 		<slot />
 		<Footer />
+
+		<script src="../data/index.js"/>
 	</body>
 </html>

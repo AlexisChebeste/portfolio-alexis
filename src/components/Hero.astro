@@ -26,8 +26,10 @@ import Download from "./icons/Download.astro";
             </Link>
         </Button>
         <Button class="bg-slate-50 text-zinc-900 hover:bg-slate-200">
-            <Download class="size-4" />
-            Descargar CV
+            <Link href="/cv-alexis.pdf" download="CV_Alexis.pdf" aria-label="Descargar CV"> 
+                <Download class="size-4" />
+                Descargar CV
+            </Link>
         </Button>
     </div>
 </SectionContainer>

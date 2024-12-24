@@ -11,39 +11,46 @@ import Subtitle from "./Subtitle.astro";
 
 <SectionContainer class="items-center" id="contact">
     <Subtitle>Contáctame</Subtitle>
-    <form class="flex flex-col gap-6 max-w-3xl mx-auto w-full" >
-        <label  for="name" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Nombre</label>
+    <form 
+        autocomplete="off"
+        id="form"
+        class="flex flex-col gap-6 max-w-3xl mx-auto w-full" 
+    >
+        <label  for="from_name" class="text-lg font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Nombre</label>
         <div class="relative ">
             <User class="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground " />
             <input 
                 type="text" 
-                id="name" 
-                name="name" 
+                id="from_name" 
+                name="from_name" 
                 placeholder="Tu nombre" 
-                class="bg-neutral-950 w-full px-10 py-2 text-sm text-gray-900 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-transparent" 
-                required/>
+                class="bg-neutral-950 w-full px-10 py-2 text-sm text-white text-opacity-80 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-transparent" 
+                required
+            />
         </div>
-        <label  for="email" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label>
-        <div class="relative p">
+        <label  for="email_user" class="text-lg font-semibold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Email</label>
+        <div class="relative ">
             <Email class="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground " />
             <input 
                 type="email" 
-                id="email" 
-                name="email" 
-                placeholder="tu@email.com" class="bg-neutral-950 w-full px-10 py-2 text-sm text-gray-900 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-transparent" 
-                required/>
+                id="email_user" 
+                name="email_user" 
+                placeholder="tu@email.com" 
+                class="bg-neutral-950 w-full px-10 py-2 text-sm text-white text-opacity-80 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200 focus:border-transparent" 
+                required
+            />
         </div>
         <label  for="message" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Mensaje</label>
         <div class="relative ">
-            <Comment class="absolute left-3 top-4 text-muted-foreground" />
+            <Comment class="absolute left-4 top-6 transform -translate-y-1/2 text-muted-foreground " />
             <textarea
+              name="message" 
               id="message"
-              name="message"
-              placeholder="Tu mensaje"
-              class="bg-neutral-950 w-full px-10 py-3 text-sm text-gray-900 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200  focus:border-transparent min-h-[100px]"
+              placeholder="Escribe tu mensaje"
+              class="bg-neutral-950 w-full px-10 py-3 text-sm text-white text-opacity-80 placeholder-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-200  focus:border-transparent min-h-[100px]"
               required
-            ></textarea>
+            />
           </div>
-        <Button type="submit" class="mx-auto justify-center w-full bg-slate-50 text-zinc-900 hover:bg-slate-200 hover:scale-105 ">Enviar Mensaje</Button>
+        <button id="button" class="mx-auto border border-stone-600 justify-center w-full bg-slate-50 text-zinc-900 hover:bg-slate-200 px-6 py-3 flex gap-2 items-center rounded-lg text-sm font-medium">Enviar Mensaje</button>
     </form>
 </SectionContainer>

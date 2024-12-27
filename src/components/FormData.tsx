@@ -36,7 +36,7 @@ export function ContactForm() {
   }
 
   return (
-    <section className="scroll-m-20 flex flex-col container px-4  py-12  md:px-10 gap-4 max-w-7xl items-center">
+    <section className="scroll-m-20 flex flex-col container px-4  py-12  md:px-10 gap-4 max-w-7xl items-center" id="contact">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white leading-tight tracking-tighter md:text-4xl mb-8 text-center">
           Contáctame
         </h2>
@@ -49,7 +49,7 @@ export function ContactForm() {
               Nombre
             </label>
             <div className="relative">
-              <img src={User.src} alt="user" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
+              <img src={User.src} alt="user" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" loading="lazy" />
               <input
                 type="text"
                 id="from_name"
@@ -65,7 +65,7 @@ export function ContactForm() {
               Email
             </label>
             <div className="relative">
-              <img src={Email.src} alt="email" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
+              <img src={Email.src} alt="email" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" loading="lazy"/>
               <input
                 type="email"
                 id="email_user"
@@ -81,7 +81,7 @@ export function ContactForm() {
               Mensaje
             </label>
             <div className="relative">
-              <img src={Comment.src} alt="comment" className="absolute top-3 left-3" />
+              <img src={Comment.src} alt="comment" className="absolute top-3 left-3" loading="lazy"/>
               <textarea
                 id="message"
                 name="message"

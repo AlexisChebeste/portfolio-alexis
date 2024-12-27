@@ -1,14 +1,15 @@
 ---
 import SectionContainer from "./SectionContainer.astro";
-import Button from "./Button.astro";
 import Link from "./Link.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import LinkedInIcon from "./icons/LinkedInIcon.astro";
 import Download from "./icons/Download.astro";
+import ArrowDown from "./icons/ArrowDown.astro";
+
 ---
 
-<SectionContainer class="items-center justify-center text-center py-32 " id="hero">
-    <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-6xl md:leading-[1.1] mt-20 md:mt-36 text-gray-900 dark:text-slate-50">Hey, soy Alexis</h1>
+<SectionContainer class="items-center justify-center text-center py-0 min-h-screen" id="hero">
+    <h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-6xl md:leading-[1.1]  text-gray-900 dark:text-slate-50">Hey, soy Alexis</h1>
     <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl md:text-xl ">
         <span class="text-blue-500">Desarrollador Front-End</span> de Buenos Aires, Argentina. Especializado en aplicaciones web responsivas que brindan experiencias de usuario significativas.
     </p>
@@ -30,4 +31,11 @@ import Download from "./icons/Download.astro";
             Descargar CV
         </Link>
     </div>
+    <a
+        href="#about"
+        aria-label="Ir a la sección Acerca de"
+        class="bg-gray-900 text-white dark:text-dark p-3 rounded-full absolute bottom-4 animate-bounce"
+    >
+        <ArrowDown class="size-6 " />
+    </a>
 </SectionContainer>

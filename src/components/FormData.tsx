@@ -23,7 +23,7 @@ export function ContactForm() {
         import.meta.env.PUBLIC_SERVICE_ID,
         import.meta.env.PUBLIC_TEMPLATE_ID,
         form,
-        import.meta.env.PUBLIC_USER_ID
+        {publicKey: import.meta.env.PUBLIC_USER_ID,}
       )
       setNotification({ message: "Mensaje enviado. Gracias por contactarme. Te responderé pronto.", type: 'success' })
       form.reset()

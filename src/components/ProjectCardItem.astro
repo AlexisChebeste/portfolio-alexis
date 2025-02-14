@@ -3,34 +3,74 @@ import { Image } from "astro:assets";
 import Capsule from "./Capsule.astro";
 import Link from "./Link.astro";
 
-const {title, image, description, tags, linkCode, linkWeb} = Astro.props;
-
+const { title, image, description, tags, linkFrontendCode, linkWeb, linkBackendCode } = Astro.props;
 ---
 
-<div class="bg-white dark:bg-neutral-950 border border-spacing-2  border-stone-400 dark:border-stone-600 shadow-md  rounded-lg flex flex-col  ">
+<div class="bg-white dark:bg-neutral-950 border border-spacing-2 border-stone-400 dark:border-stone-600 shadow-md rounded-lg flex flex-col">
     <a href={linkWeb} target="_blank" rel="noopener noreferrer" role="link">
         <Image class="object-contain rounded-t-lg w-full" src={image} alt={title} />
     </a>
-    
-    <div  class="flex flex-col p-4 justify-between h-full">
+
+    <div class="flex flex-col p-4 justify-between h-full">
         <div class="flex flex-col gap-2">
-            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white ">{title}</h3>
-            <p class="text-gray-700 dark:text-gray-400 ">{description}</p>
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">{title}</h3>
+            <p class="text-gray-700 dark:text-gray-400">{description}</p>
         </div>
         <div class="flex flex-wrap gap-2 mt-7">
             {tags.map((tag: unknown) => (
-                <Capsule tag={tag}/>
+                <Capsule tag={tag} />
             ))}
         </div>
     </div>
-    <div class="flex justify-between p-4">
-        <Link href={linkWeb} >
-            Ver proyecto
-        </Link>
-        <Link href={linkCode}>
-            Ver código
-        </Link>
-        
+
+    <div class="flex justify-between p-4 relative">
+        <Link href={linkWeb}>Ver proyecto</Link>
+
+        {linkBackendCode ? (
+            <div class="relative">
+                <button 
+                    id="dropdownButton"
+                    class="bg-white hover:bg-slate-200 dark:bg-neutral-950 border border-stone-300 dark:border-stone-600 dark:hover:bg-neutral-700 hover:scale-105 px-6 py-3 flex gap-2 items-center rounded-lg text-sm font-medium transition duration-300 ease-in-out"
+                >
+                    Ver código ▼
+                </button>
+
+                <div 
+                    id="dropdownMenu"
+                    class="hidden absolute right-0 mt-2 w-40 bg-white dark:bg-neutral-900 border border-stone-300 dark:border-stone-600 shadow-md rounded-lg"
+                >
+                    <a href={linkFrontendCode} target="_blank" class="block px-4 py-2 text-sm text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700 rounded-t-lg">
+                        Frontend
+                    </a>
+                    <a href={linkBackendCode} target="_blank" class="block px-4 py-2 text-sm text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-neutral-700 rounded-b-lg">
+                        Backend
+                    </a>
+                </div>
+            </div>
+        ) : (
+            <Link href={linkFrontendCode}>Ver código</Link>
+        )}
     </div>
-    
 </div>
+
+<!-- Agregar JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdownButton = document.getElementById("dropdownButton");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        if (dropdownButton && dropdownMenu) {
+            dropdownButton.addEventListener("click", () => {
+                dropdownMenu.classList.toggle("hidden");
+            });
+
+            // Cerrar el dropdown si se hace clic fuera
+            document.addEventListener("click", (event) => {
+                if (!dropdownButton.contains(event.target as Node) && !dropdownMenu.contains(event.target as Node)) {
+                    dropdownMenu.classList.add("hidden");
+                }
+            });
+        }
+    });
+    
+</script>

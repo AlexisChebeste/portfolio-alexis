@@ -1,6 +1,6 @@
 ---
 import bijouterieImage from "../assets/project1.jpg";
-import gestionTareasImage from "../assets/project2.jpg";
+import trelloCloneImage from "../assets/project2.jpeg";
 import ProjectCardItem from "./ProjectCardItem.astro";
 
 const projects = [
@@ -8,26 +8,27 @@ const projects = [
         title: "Tienda de bijouterie",
         description: "Plataforma web moderna y responsiva para la venta de accesorios y bijouterie. Diseñada para brindar una experiencia de usuario intuitiva tanto para compradores como para administradores.",
         image: bijouterieImage,
-        tags: ["React", "Tailwind CSS", "Node.js","Express", "MongoDB"],
+        tags: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
         linkWeb: "https://bijouterie.com",
-        linkCode: "https://githbub.com/bijouterie",
+        linkFrontendCode: "https://github.com/bijouterie",
     },
     {
-        title: "App de Gestión de Tareas",
-        description: "Plataforma colaborativa para la gestión de proyectos y tareas diseñada  para empresas pequeñas. Ofrece herramientas intuitivas para planificar, organizar y realizar un seguimiento efectivo de actividades en equipo.",
-        image: gestionTareasImage,
-        tags: ["React", "Tailwind CSS", "Node.js","Express", "MongoDB"],
-        linkWeb: "https://gestiontareas.com",
-        linkCode: "https://githbub.com/gestiontareas",
-    },
+        title: "Clon de Trello - Gestión de Proyectos",
+        description: "Aplicación web inspirada en Trello para la gestión de tareas y proyectos. Permite crear tableros, listas y tarjetas, moverlas con drag & drop y organizar proyectos de forma colaborativa.",
+        image: trelloCloneImage,
+        tags: ["React", "TypeScript", "Redux", "DnDKit", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+        linkWeb: "https://trello-clone-ts-tau.vercel.app/",
+        linkFrontendCode: "https://github.com/AlexisChebeste/trello-clone-ts/",
+        linkBackendCode: "https://github.com/AlexisChebeste/backend-trello/",
+    }
 ];
 
 
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 ">
-    {projects.map(({title, image, tags, description, linkWeb, linkCode}) => (
-        <ProjectCardItem title={title} image={image} tags={tags} description={description} linkWeb={linkWeb} linkCode={linkCode}/>
+    {projects.map(({title, image, tags, description, linkWeb, linkFrontendCode,linkBackendCode}) => (
+        <ProjectCardItem title={title} image={image} tags={tags} description={description} linkWeb={linkWeb} linkFrontendCode={linkFrontendCode} linkBackendCode={linkBackendCode}/>
     ))}
     
 </div>

@@ -8,7 +8,7 @@ const { title, image, description, tags, linkFrontendCode, linkWeb, linkBackendC
 
 <div class="bg-white dark:bg-neutral-950 border border-spacing-2 border-stone-400 dark:border-stone-600 shadow-md rounded-lg flex flex-col">
     <a href={linkWeb} target="_blank" rel="noopener noreferrer" role="link">
-        <Image class="object-contain rounded-t-lg w-full" src={image} alt={title} />
+        <Image class="object-contain rounded-t-lg w-full" src={image} alt={title} loading="lazy"/>
     </a>
 
     <div class="flex flex-col p-4 justify-between h-full">
